@@ -4,15 +4,17 @@ namespace App\Controller;
 
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use App\Services\ListHandler;
 
 class VideoController extends Controller
 {
     /**
      * @Route("/videos", name="videos_list")
      */
-    public function videosList()
+    public function videosList(ListHandler $listHandler)
     {
         //Récupérer toutes les vidéos (pagination ?)
-        return $this->render('video/videos_list', array());
+        $videos = $listHandler->generateVideos();
+        return $this->render('video/videos_list.html.twig', array('videos' => $videos));
     }
 }

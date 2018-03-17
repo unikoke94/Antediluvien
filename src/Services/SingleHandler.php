@@ -34,9 +34,16 @@ class SingleHandler
 		//Récupérer les commentaires du bon post
 	}
 
-	private function generateForm()
+	private function generateForm(Request $request)
 	{
 		$comment = new Comment();
+		//Création Form
+	}
+
+	public function generateData(Request $request, $id)
+	{
+		//validation du form avec mise en bdd du commentaire
+		//return le bon post
 	}
 
 }

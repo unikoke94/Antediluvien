@@ -4,15 +4,19 @@ namespace App\Controller;
 
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+use App\Services\ListHandler;
+use App\Services\SingleHandler;
 
 class BlogController extends Controller
 {
     /**
      * @Route("/blog/liste", name="blog_list")
      */
-    public function blogList()
+    public function blogList(ListHandler $listHandler)
     {
         //Récupérer tous les posts (pagination ?)
+        $posts = $listHandler->generatePosts();
         return $this->render('blog/blog_list.html.twig', array('posts' => $posts));
     }
 
@@ -20,9 +24,10 @@ class BlogController extends Controller
     /**
      * @Route("/blog/article/{id}", name="blog_single")
      */
-    public function blogSingle()
+    public function blogSingle(Request $request, SingleHandler $singleHandler, $id)
     {
     	//Récupérer le post en fonction de l'id (penser aux exceptions)
+        $post = $singleHandler->generateData($request, $id);
     	return $this->render('blog/blog_single.html.twig', array('post' => $post));
     }
 
