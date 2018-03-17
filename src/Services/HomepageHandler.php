@@ -23,11 +23,15 @@ class HomepageHandler
 	private function generatePost()
 	{
 		//Requête pour récupérer le dernier post
+		$lastPost = $this->postRepo->findOneBy(array(), array('id' => 'DESC'));
+		return $lastPost;
 	}
 
 	private function generateVideo()
 	{
 		//Requête pour récupérer la dernière vidéo
+		$lastVideo = $this->videoRepo->findOneBy(array(), array('id' => 'DESC'));
+		return $lastVideo;
 	}
 
 	public function generateData()

@@ -27,8 +27,8 @@ class BlogController extends Controller
     public function blogSingle(Request $request, SingleHandler $singleHandler, $id)
     {
     	//Récupérer le post en fonction de l'id (penser aux exceptions)
-        $post = $singleHandler->generateData($request, $id);
-    	return $this->render('blog/blog_single.html.twig', array('post' => $post));
+        $data = $singleHandler->generateData($request, $id);
+    	return $this->render('blog/blog_single.html.twig', array('post' => $data['post'], 'form' => $data['form']));
     }
 
     //Réfléchir s'il faut faire une méthode pour signaler un commentaire, peut être une méthode privée ?

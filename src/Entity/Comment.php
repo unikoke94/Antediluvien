@@ -35,7 +35,7 @@ class Comment
     /**
      * @ORM\Column(type="boolean")
      */
-    private $reported;
+    private $reported = false;
 
      /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Post", inversedBy="comments")
