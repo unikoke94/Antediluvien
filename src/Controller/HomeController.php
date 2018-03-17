@@ -4,16 +4,17 @@ namespace App\Controller;
 
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use App\Services\HomepageHandler;
 
 class HomeController extends Controller
 {
     /**
      * @Route("/", name="home")
      */
-    public function index()
+    public function index(HomepageHandler $homeHandler)
     {
-        //Récupérer last post & last video
-        return $this->render('home/homepage.html.twig', array());
+        $data = $homeHandler->generateData();
+        return $this->render('home/homepage.html.twig', array($data));
     }
 
 
