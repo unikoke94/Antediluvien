@@ -15,5 +15,5 @@ class LoginHandler
 		$this->formfactory = $formfactory;
 	}
 
-	public 
+	
 }

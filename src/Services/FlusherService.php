@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\EntityManagerInterface;
 
 class FlusherService
 {

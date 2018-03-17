@@ -2,9 +2,9 @@
 
 namespace App\Services;
 
-use use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\Post;
-use App\Enityt\Video;
+use App\Entity\Video;
 
 class HomepageHandler
 {
