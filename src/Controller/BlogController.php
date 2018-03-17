@@ -11,11 +11,10 @@ use App\Services\SingleHandler;
 class BlogController extends Controller
 {
     /**
-     * @Route("/blog/liste", name="blog_list")
+     * @Route("/blog", name="blog_list")
      */
     public function blogList(ListHandler $listHandler)
     {
-        //Récupérer tous les posts (pagination ?)
         $posts = $listHandler->generatePosts();
         return $this->render('blog/blog_list.html.twig', array('posts' => $posts));
     }
@@ -26,14 +25,14 @@ class BlogController extends Controller
      */
     public function blogSingle(Request $request, SingleHandler $singleHandler, $id)
     {
-    	//Récupérer le post en fonction de l'id (penser aux exceptions)
         $data = $singleHandler->generateData($request, $id);
     	return $this->render('blog/blog_single.html.twig', array('post' => $data['post'], 'form' => $data['form']));
     }
 
-    //Réfléchir s'il faut faire une méthode pour signaler un commentaire, peut être une méthode privée ?
+
     private function reportComment()
     {
+        //Méthode privée ? Juste dans un service ou dans le controller ?
         //Récupérer le bon commentaire pour le signaler ($comment->setReported = true);
     }
 }
