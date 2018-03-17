@@ -10,10 +10,9 @@ class LoginController extends Controller
     /**
      * @Route("/login", name="login")
      */
-    public function index()
+    public function login()
     {
-        return $this->render('login/index.html.twig', [
-            'controller_name' => 'LoginController',
-        ]);
+        //Récupérer le form login
+        return $this->render('login/login.html.twig');
     }
 }

@@ -8,12 +8,32 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class HomeController extends Controller
 {
     /**
-     * @Route("/home", name="home")
+     * @Route("/", name="home")
      */
     public function index()
     {
-        return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
-        ]);
+        //Récupérer last post & last video
+        return $this->render('home/homepage.html.twig', array());
     }
+
+
+    /**
+     * @Route("/contact", name="contact")
+     */
+    public function contact()
+    {
+        //Récupérer le form de contact
+        return $this->render('home/contact.html.twig', array());
+    }
+
+
+    /**
+     * @Route("/mentions-legales", name="mentions_legales")
+     */
+    public function mentionsLegales()
+    {
+        return $this->render('home/mentions_legales.html.twig');
+    }
+
+
 }

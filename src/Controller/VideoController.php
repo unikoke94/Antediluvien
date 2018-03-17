@@ -8,12 +8,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class VideoController extends Controller
 {
     /**
-     * @Route("/video", name="video")
+     * @Route("/videos", name="videos_list")
      */
-    public function index()
+    public function videosList()
     {
-        return $this->render('video/index.html.twig', [
-            'controller_name' => 'VideoController',
-        ]);
+        //Récupérer toutes les vidéos (pagination ?)
+        return $this->render('video/videos_list', array());
     }
 }
