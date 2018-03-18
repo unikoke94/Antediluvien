@@ -6,6 +6,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\Request;
 use App\Services\FlusherService;
+use App\Form\CommentType;
 use App\Entity\Post;
 use App\Entity\Comment;
 

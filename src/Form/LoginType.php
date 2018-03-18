@@ -22,6 +22,7 @@ class LoginType extends AbstractType
 				'required' => true
 				))
 			->add('Connexion', SubmitType::class)
+			->getForm()
 		;
 	}
 }			
