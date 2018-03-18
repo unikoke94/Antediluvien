@@ -13,7 +13,6 @@ class VideoController extends Controller
      */
     public function videosList(ListHandler $listHandler)
     {
-        //Récupérer toutes les vidéos (pagination ?)
         $videos = $listHandler->generateVideos();
         return $this->render('video/videos_list.html.twig', array('videos' => $videos));
     }

@@ -39,4 +39,14 @@ class CommentRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
+
+    public function findAllReported()
+    {
+        return $this->createQueryBuilder('c')
+            ->where('c.reported = :reported')->setParameter('reported', true)
+            ->orderBy('c.id', 'DESC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 }

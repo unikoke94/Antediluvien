@@ -4,16 +4,17 @@ namespace App\Controller;
 
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use App\Services\AdminHandler;
 
 class AdminController extends Controller
 {
     /**
      * @Route("/admin", name="admin")
      */
-    public function index()
+    public function index(AdminHandler $adminHandler)
     {
-        //Récupérer données homepage admin ($posts, $videos, $categories)
-        return $this->render('admin/admin.html.twig', array());
+        $data = $adminHandler->generateData();
+        return $this->render('admin/admin.html.twig', array('posts' => $data['posts'], 'reportedComments' => $data['reportedComments'], 'categories' => $data['categories'], 'videos' => $data['videos']));
     }
 
 

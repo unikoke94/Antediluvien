@@ -29,10 +29,13 @@ class BlogController extends Controller
     	return $this->render('blog/blog_single.html.twig', array('post' => $data['post'], 'form' => $data['form']));
     }
 
-
-    private function reportComment()
+    /**
+     * @Route("/blog/article/{postId}/signalement-commentaire/{id}" name="blog_comment_report")
+     */
+    public function reportComment(SingleHandler $singleHandler, $postId, $id)
     {
-        //Méthode privée ? Juste dans un service ou dans le controller ?
-        //Récupérer le bon commentaire pour le signaler ($comment->setReported = true);
+        $post = $singleHandler->generatePost($postId);//Vérifier si ça fonctionne avec juste $postId passé en paramètre
+        $singleHandler->reportComment($id);
+        return $this->redirectToRoute('blog_single', array('id' => $post->getId()));
     }
 }

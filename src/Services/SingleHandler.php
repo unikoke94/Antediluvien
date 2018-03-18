@@ -27,16 +27,20 @@ class SingleHandler
 		$this->commentRepo = $this->em->getRepository(Comment::class);
 	}
 
-	private function generatePost($id)
-	{
-		//Récupérer le bon post 
+	public function generatePost($id)
+	{ 
 		$post = $this->em->postRepo->findById($id);
 		return $post;
 	}
 
+	private function generateComment($id)
+	{
+		$comment = $this->em->commentRepo->findById($id);
+		return $comment;
+	}
+
 	private function generateComments($postId)
 	{
-		//Récupérer les commentaires du bon post
 		$comments = $this->em->commentRepo->findByPostId($postId);
 		return $comments;
 	}
@@ -46,13 +50,17 @@ class SingleHandler
 		$comment = new Comment();
 		$form = $this->formFactory->create(CommentType::class, $comment);
 		return array('comment' => $comment, 'form' => $form);
-		//Création Form
+	}
+
+	public function reportComment($id)
+	{
+		$comment = $this->generateComment($id);
+		$comment->setReported(true);
+		$this->flusher->flushEntity($comment);
 	}
 
 	public function generateData(Request $request, $id)
 	{
-		//validation du form avec mise en bdd du commentaire
-		//return le bon post
 		$post = $this->generatePost($id);
 		$comments = $this->generateComments($id);
 		$array = $this->generateForm($request);

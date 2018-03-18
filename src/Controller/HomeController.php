@@ -4,7 +4,9 @@ namespace App\Controller;
 
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 use App\Services\HomepageHandler;
+use App\Services\ContactHandler;
 
 class HomeController extends Controller
 {
@@ -21,10 +23,10 @@ class HomeController extends Controller
     /**
      * @Route("/contact", name="contact")
      */
-    public function contact()
+    public function contact(Request $request, ContactHandler $contactHandler)
     {
-        //Récupérer le form de contact
-        return $this->render('home/contact.html.twig', array());
+        $form = $contactHandler->generateData($request);
+        return $this->render('home/contact.html.twig', array('form' => $form));
     }
 
 

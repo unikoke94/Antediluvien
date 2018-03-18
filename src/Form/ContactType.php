@@ -36,6 +36,7 @@ class ContactType extends AbstractType
 				'required' => true
 				))
 			->add('Envoyer', SubmitType::class)
+			->getForm()
 		;	
 	}
 }
