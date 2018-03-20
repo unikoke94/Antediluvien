@@ -29,19 +29,19 @@ class SingleHandler
 
 	public function generatePost($id)
 	{ 
-		$post = $this->em->postRepo->findById($id);
+		$post = $this->postRepo->findById($id);
 		return $post;
 	}
 
 	private function generateComment($id)
 	{
-		$comment = $this->em->commentRepo->findById($id);
+		$comment = $this->commentRepo->findById($id);
 		return $comment;
 	}
 
 	private function generateComments($postId)
 	{
-		$comments = $this->em->commentRepo->findByPostId($postId);
+		$comments = $this->commentRepo->findByPostId($postId);
 		return $comments;
 	}
 

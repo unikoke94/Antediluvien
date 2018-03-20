@@ -32,10 +32,10 @@ class BlogController extends Controller
     /**
      * @Route("/blog/article/{postId}/signalement-commentaire/{id}" name="blog_comment_report")
      */
-    public function reportComment(SingleHandler $singleHandler, $postId, $id)
+    /*public function reportComment(SingleHandler $singleHandler, $postId, $id)
     {
         $post = $singleHandler->generatePost($postId);//Vérifier si ça fonctionne avec juste $postId passé en paramètre
         $singleHandler->reportComment($id);
         return $this->redirectToRoute('blog_single', array('id' => $post->getId()));
-    }
+    }*/
 }
