@@ -8,13 +8,13 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use App\Services\FlusherService;
-use App\Entity\Post;
-use App\Form\PostType;
+use App\Entity\Video;
+use App\Form\VideoType;
 
-class UpdatePostHandler 
+class UpdateVideoHandler 
 {
 	private $em;
-	private $postRepo;
+	private $videoRepo;
 	private $formFactory;
 	private $flusher;
 	private $checker;
@@ -23,34 +23,34 @@ class UpdatePostHandler
 	public function __construct(EntityManagerInterface $em, FormFactoryInterface $formFactory, FlusherService $flusher, AuthorizationCheckerInterface $checker)
 	{
 		$this->em = $em;
-		$this->postRepo = $this->em->getRepository(Post::class);
+		$this->videoRepo = $this->em->getRepository(Video::class);
 		$this->formFactory = $formFactory;
 		$this->flusher = $flusher;
 		$this->checker = $checker;
 	}
 
 
-	private function generatePost($id)
+	private function generateVideo($id)
 	{
-		$post = $this->postRepo->findById($id);
-		return $post;
+		$video = $this->videoRepo->findById($id);
+		return $video;
 	}
 
-	private function generateForm(Post $post)
+	private function generateForm(Video $video)
 	{
-		$form = $this->formFactory->create(PostType::class, $post);
+		$form = $this->formFactory->create(VideoType::class, $video);
 		return $form;
 	}
 
 	public function generateData(Request $request, $id)
 	{
 		if ($this->checker->isGrandted('ROLE_ADMIN')) {
-			$post = $this->generatePost($id);
-			$form = $this->generateForm($post);
+			$video = $this->generateVideo($id);
+			$form = $this->generateForm($video);
 			$form->handleRequest($request);
 
 			if ($form->isSubmitted() && $form->isValid()) {
-				$this->flusher->flushEntity($post);
+				$this->flusher->flushEntity($video);
 			}
 
 			return $form;

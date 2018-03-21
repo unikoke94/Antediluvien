@@ -8,13 +8,13 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use App\Services\FlusherService;
-use App\Entity\Post;
-use App\Form\PostType;
+use App\Entity\Category;
+use App\Form\CategoryType;
 
-class UpdatePostHandler 
+class UpdateCategoryHandler 
 {
 	private $em;
-	private $postRepo;
+	private $categoryRepo;
 	private $formFactory;
 	private $flusher;
 	private $checker;
@@ -23,34 +23,34 @@ class UpdatePostHandler
 	public function __construct(EntityManagerInterface $em, FormFactoryInterface $formFactory, FlusherService $flusher, AuthorizationCheckerInterface $checker)
 	{
 		$this->em = $em;
-		$this->postRepo = $this->em->getRepository(Post::class);
+		$this->categoryRepo = $this->em->getRepository(Category::class);
 		$this->formFactory = $formFactory;
 		$this->flusher = $flusher;
 		$this->checker = $checker;
 	}
 
 
-	private function generatePost($id)
+	private function generateCategory($id)
 	{
-		$post = $this->postRepo->findById($id);
-		return $post;
+		$category = $this->categoryRepo->findById($id);
+		return $category;
 	}
 
-	private function generateForm(Post $post)
+	private function generateForm(Category $category)
 	{
-		$form = $this->formFactory->create(PostType::class, $post);
+		$form = $this->formFactory->create(CategoryType::class, $category);
 		return $form;
 	}
 
 	public function generateData(Request $request, $id)
 	{
 		if ($this->checker->isGrandted('ROLE_ADMIN')) {
-			$post = $this->generatePost($id);
-			$form = $this->generateForm($post);
+			$category = $this->generateCategory($id);
+			$form = $this->generateForm($category);
 			$form->handleRequest($request);
 
 			if ($form->isSubmitted() && $form->isValid()) {
-				$this->flusher->flushEntity($post);
+				$this->flusher->flushEntity($category);
 			}
 
 			return $form;

@@ -7,7 +7,7 @@ use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use App\Entity\Post;
 
-class DeletePostService
+class DeletePostHandler
 {
 	private $em;
 	private $postRepo;
@@ -27,7 +27,7 @@ class DeletePostService
 		return $post;
 	}
 
-	public function generateData($id)
+	public function deletePost($id)
 	{
 		if ($this->checker->isGrandted('ROLE_ADMIN')) {
 			$post = $this->generatePost($id);
