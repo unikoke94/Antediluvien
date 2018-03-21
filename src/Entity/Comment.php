@@ -41,7 +41,7 @@ class Comment
      * @ORM\ManyToOne(targetEntity="App\Entity\Post", inversedBy="comments")
      * @ORM\JoinColumn(nullable=true)
      */
-    private $posts;
+    private $post;
 
 
     public function __construct()
@@ -98,14 +98,14 @@ class Comment
     	return $this;
     }
 
-    public function getPosts()
+    public function getPost()
     {
-    	return $this->posts;
+    	return $this->post;
     }
 
-    public function setPosts(Post $post)
+    public function setPost(Post $post)
     {
-    	$this->posts = $posts;
+    	$this->post = $post;
     	return $this;
     }
 }
