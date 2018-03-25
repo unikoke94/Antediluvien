@@ -41,6 +41,8 @@ class NewVideoHandler
 			$form->handleRequest($request);
 
 			if($form->isSubmitted() && $form->isValid()) {
+				$array = explode('=', $video->getUrl());
+        		$video->setYoutubeId(array_pop($array));
 				$this->flusher->flushEntity($video);
 			}
 

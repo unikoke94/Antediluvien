@@ -26,11 +26,11 @@ class LoginHandler
 		$form = $this->generateForm($request);
 		$form->handleRequest($request);
 
-		if ($form->isSubmitted() && $form->isValid()) {
+		/*if ($form->isSubmitted() && $form->isValid()) {
 			return $this->redirectToRoute('admin');
-		}
+		}*/
 
-		return $form->createView();
+		return $form/*->createView()*/;
 	}
 	
 }

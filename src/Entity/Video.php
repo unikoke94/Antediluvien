@@ -26,6 +26,11 @@ class Video
      */
     private $url;
 
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $youtubeId;
+
 
     public function getId()
     {
@@ -52,5 +57,18 @@ class Video
     {
     	$this->url = $url;
     	return $this;
+    }
+
+    public function getYoutubeId()
+    {
+        //$array = explode('=', $this->url);
+        //$this->youtubeId = array_pop($array);
+        return $this->youtubeId;
+    }
+
+    public function setYoutubeId($youtubeId)
+    {
+        $this->youtubeId = $youtubeId;
+        return $this;
     }
 }

@@ -40,6 +40,6 @@ class HomepageHandler
 		return array(
 			'post'  => $lastPost,
 			'video' => $lastVideo
-			);
+		);
 	}
 }

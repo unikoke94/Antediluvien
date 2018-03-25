@@ -38,7 +38,7 @@ class AdminController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             return $this->redirectToRoute('admin');
         }
-        return $this->render('admin/new_post.html.twig', array('form' => $form));
+        return $this->render('admin/new_post.html.twig', array('form' => $form->createView()));
     }
 
 
@@ -51,7 +51,7 @@ class AdminController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             return $this->redirectToRoute('admin');
         }
-        return $this->render('admin/edit_post.html.twig', array('form' => $form));
+        return $this->render('admin/edit_post.html.twig', array('form' => $form->createView()));
     }
 
 
@@ -94,7 +94,7 @@ class AdminController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             return $this->redirectToRoute('admin');
         }
-        return $this->render('admin/new_video.html.twig', array('form' => $form));
+        return $this->render('admin/new_video.html.twig', array('form' => $form->createView()));
     }
 
 
@@ -107,7 +107,7 @@ class AdminController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             return $this->redirectToRoute('admin');
         }
-        return $this->render('admin/edit_video.html.twig', array('form' => $form));
+        return $this->render('admin/edit_video.html.twig', array('form' => $form->createView()));
     }
 
 
@@ -130,7 +130,7 @@ class AdminController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             return $this->redirectToRoute('admin');
         }
-        return $this->render('admin/new_category.html.twig', array('form' => $form));
+        return $this->render('admin/new_category.html.twig', array('form' => $form->createView()));
     }
 
 
@@ -143,7 +143,7 @@ class AdminController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             return $this->redirectToRoute('admin');
         }
-        return $this->render('admin/edit_category.html.twig', array('form' => $form));
+        return $this->render('admin/edit_category.html.twig', array('form' => $form->createView()));
     }
 
 

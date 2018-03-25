@@ -1,7 +1,7 @@
 <div class="container-fluid" id="header">
 	<div class="row">
 		<div id="logo-header">
-			<a href="{{ path('home') }}"><img src="{{ asset('build/img/logo.svg') }}" alt="logo" width="80px" height="65px"></a>
+			<a href="{{ path('home') }}"><img src="{{ asset('build/img/logo-gris.svg') }}" alt="logo" width="80px" height="65px"></a>
 		</div>
 		<div id="title-header">
 			<a href="{{ path('home') }}"><h1>Antédiluvien</h1></a><!-- margin: 0 auto; position: relative; right: 40px; -->
@@ -9,12 +9,12 @@
 	</div>
 
 	<div class="container" id="menu">
-		<nav class="nav">
-		  <a class="nav-link active" href="{{ path('home') }}">Accueil</a>
-		  <a class="nav-link" href="{{ path('about') }}">A propos</a>
-		  <a class="nav-link" href="{{ path('blog_list') }}">Blog</a>
-		  <a class="nav-link" href="{{ path('videos_list') }}">Vidéos</a>
-		  <a class="nav-link" href="{{ path('contact') }}">Contact</a>
+		<nav class="nav justify-content-center">
+		  <a class="nav-link active" href="{{ path('home') }}" title="Accueil"><i data-feather="home"></i></a>
+		  <a class="nav-link" href="{{ path('about') }}" title="A propos"><i data-feather="globe"></i></a>
+		  <a class="nav-link" href="{{ path('blog_list') }}" title="Blog"><i data-feather="file-text"></i></a>
+		  <a class="nav-link" href="{{ path('videos_list') }}" title="Vidéos"><i data-feather="video"></i></a>
+		  <a class="nav-link" href="{{ path('contact') }}" title="Contact"><i data-feather="mail"></i></a>
 		</nav>
 	</div>
 </div>

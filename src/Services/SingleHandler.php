@@ -39,13 +39,13 @@ class SingleHandler
 		return $comment;
 	}
 
-	private function generateComments($postId)
+	private function generateComments($postId)//And categories ?
 	{
-		$comments = $this->commentRepo->findByPostId($postId);
+		$comments = $this->commentRepo->findByPost($postId);
 		return $comments;
 	}
 
-	private function generateForm(Request $request)
+	private function generateForm()
 	{
 		$comment = new Comment();
 		$form = $this->formFactory->create(CommentType::class, $comment);
@@ -63,18 +63,26 @@ class SingleHandler
 	{
 		$post = $this->generatePost($id);
 		$comments = $this->generateComments($id);
-		$array = $this->generateForm($request);
+
+		if($post != null && $comments != null) {
+			$post->setComments($comments);
+		}
+
+		$array = $this->generateForm();
 		$form = $array['form'];
 		$comment = $array['comment'];
 
 		$form->handleRequest($request);
 		if ($form->isSubmitted() && $form->isValid()) {
 			$comment->setUsername($form['username']->getData());
-			$post->AddComments($comment);
+			$post->addComments($comment);
 			$this->flusher->flushEntity($post);
 		}
 
-		return array('post' => $post, 'form' => $form->createView());
+		return array(
+			'post' => $post, 
+			'form' => $form->createView()
+		);
 	}
 
 }

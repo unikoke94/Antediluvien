@@ -48,7 +48,7 @@ class NewPostHandler
 				$fileName = md5(uniqid().'.'.$file->guessExtension());
 				$file->move(
 					$this->container->getParameter('images_directory'),
-					$filename
+					$fileName
 					);
 
 				$post->setImage($fileName);

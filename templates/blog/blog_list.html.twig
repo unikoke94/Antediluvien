@@ -4,6 +4,16 @@
 
 {% block body %}
 
-
+	<div class="container" id="blog-list">
+		{% for post in posts %}
+			<div id="post">
+				<a href="{{ path('blog_single', { 'id': post.id }) }}">{{ post.title }}</a>
+			</div>
+		{% else %}
+			<div id="no-post">
+				Aucun article
+			</div>
+		{% endfor %}
+	</div>
 
 {% endblock %}

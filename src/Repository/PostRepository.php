@@ -26,7 +26,7 @@ class PostRepository extends ServiceEntityRepository
             ->where('p.id = :id')->setParameter('id', $id)
             ->orderBy('p.id', 'ASC')
             ->getQuery()
-            ->getResult()
+            ->getOneOrNullResult()
         ;
     }
 }

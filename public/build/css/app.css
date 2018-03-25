@@ -1,0 +1,48 @@
+/* HEADER */
+#header {
+	padding-top: 10px;
+}
+
+#title-header {
+	margin: 0 auto;
+	position: relative;
+	right: 40px;
+	font-family: 'Hammersmith One', sans-serif;
+	text-transform: uppercase;
+}
+
+#title-header a {
+	text-decoration: none;
+	color: #494949;
+}
+
+#title-header h1 {
+	font-size: 55px;
+}
+
+#header .feather {
+	/*color: #46b5ab;*/
+	color: #b2b2b2;
+	width: 35px;
+	height: 35px;
+	transition-property: color, width, height;
+	transition-duration: 0.3s;
+} 
+
+#header .feather:hover {
+	color: #46b5ab; 
+	width: 40px;
+	height: 40px;
+}
+
+#menu a {
+	margin: 30px 30px 200px;
+}
+
+.infobulle {
+	position: absolute;
+	background-color: #212529;
+	border-radius: 3px;
+	padding: 10px;
+	color: #e0e0e0;
+}

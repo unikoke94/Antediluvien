@@ -56,7 +56,8 @@ class Post
     public function __construct()
     {
     	$this->datePost = new \DateTime();
-    	$this->comments = new ArrayColection();
+    	$this->comments = new ArrayCollection();
+        $this->categories = new ArrayCollection();
     }
 
     public function getId()
