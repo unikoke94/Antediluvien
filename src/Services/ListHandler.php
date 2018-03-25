@@ -22,15 +22,15 @@ class ListHandler
 
 	public function generatePosts()
 	{
-		//Récupérer tous les articles (pagination ?)
-		$posts = $this->em->postRepo->findAll();
+		//(pagination ?)
+		$posts = $this->postRepo->findAll();
 		return $posts;
 	}
 
 	public function generateVideos()
 	{
-		//Récupérer toutes les vidéos (pagination ?)
-		$videos = $this->em->videoRepo->findAll();
+		//(pagination ?)
+		$videos = $this->videoRepo->findAll();
 		return $videos;
 	}
 }

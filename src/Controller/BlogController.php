@@ -34,8 +34,8 @@ class BlogController extends Controller
      */
     public function reportComment(SingleHandler $singleHandler, $postId, $id)
     {
-        $post = $singleHandler->generatePost($postId);//Vérifier si ça fonctionne avec juste $postId passé en paramètre
+        //$post = $singleHandler->generatePost($postId);//Vérifier si ça fonctionne avec juste $postId passé en paramètre
         $singleHandler->reportComment($id);
-        return $this->redirectToRoute('blog_single', array('id' => $post->getId()));
+        return $this->redirectToRoute('blog_single', array('id' => $postId));
     }
 }

@@ -33,25 +33,25 @@ class AdminHandler
 
 	private function generatePosts()
 	{
-		$posts = $this->em->postRepo->findAll();
+		$posts = $this->postRepo->findAll();
 		return $posts;
 	} 
 
 	private function generateCategories()
 	{
-		$categories = $this->em->categoryRepo->findAll();
+		$categories = $this->categoryRepo->findAll();
 		return $categories;
 	}
 
 	private function generateVideos()
 	{
-		$videos = $this->em->videoRepo->findAll();
+		$videos = $this->videoRepo->findAll();
 		return $videos;
 	}
 
 	private function generateAllReportedComments()
 	{
-		$reportedComments = $this->em->commentRepo->findAllReported();
+		$reportedComments = $this->commentRepo->findAllReported();
 		return $reportedComments;
 	}
 

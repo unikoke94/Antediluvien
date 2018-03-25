@@ -16,7 +16,7 @@ class HomeController extends Controller
     public function index(HomepageHandler $homeHandler)
     {
         $data = $homeHandler->generateData();
-        return $this->render('home/homepage.html.twig', array($data));
+        return $this->render('home/homepage.html.twig', array('post' => $data['post'], 'video' => $data['video']));
     }
 
 
@@ -28,6 +28,14 @@ class HomeController extends Controller
         $form = $contactHandler->generateData($request);
         return $this->render('home/contact.html.twig', array('form' => $form));
     }
+
+    /**
+     * @Route("/a-propos", name="about")
+     */
+    public function about()
+    {
+        return $this->render('home/about.html.twig');
+    } 
 
 
     /**
