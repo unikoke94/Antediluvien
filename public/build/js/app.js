@@ -1,6 +1,6 @@
 $(function() {
 	//Faire apparaître une span infobulle au survol
-	$('a.nav-link').mouseover(function() {
+	/*$('a.nav-link').mouseover(function() {
 		if($(this).attr('title')==='') {
 			return false;
 		}
@@ -38,5 +38,5 @@ $(function() {
 			bulle.remove();
 		}
 		
-	});	
+	});*/	
 })

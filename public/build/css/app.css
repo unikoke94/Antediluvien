@@ -36,7 +36,7 @@
 }
 
 #menu a {
-	margin: 30px 30px 200px;
+	margin: 25px 30px 120px;
 }
 
 .infobulle {
@@ -46,3 +46,148 @@
 	padding: 10px;
 	color: #e0e0e0;
 }
+
+
+
+/* FOOTER */
+#footer {
+	padding: 40px 20px 30px;
+	background: #494949;
+	color: white
+}
+
+#footer h6 {
+	font-size: 14px;
+	font-weight: 300;
+}
+
+#footer a {
+	text-decoration: none;
+	color: white;
+}
+
+#footer-link {
+	text-align: center;
+}
+
+#network-icons {
+	text-align: right;
+}
+
+#network-icons a {
+	margin-right: 20px;
+}
+
+#network-icons a:hover {
+	color: #1dbaad;
+}
+
+
+
+/* HOMEPAGE */
+#homepage-first-section {
+	margin-bottom: 120px;
+}
+
+#homepage-first-section h2 {
+	font-size: 50px;
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 550;
+	border-right: 2px solid black;
+}
+
+#homepage-first-section p {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 24px;
+}
+
+.green-text {
+	color: #1dbaad;
+}
+
+p .green-text {
+	font-weight: bold;
+}
+
+#last-post {
+	width: 400px;
+	height: 280px;
+}
+
+#last-post img {
+	width: 100%;
+	height: auto;
+}
+
+#homepage-second-section {
+	margin-bottom: 120px;
+}
+
+#homepage-second-section a {
+	text-decoration: none;
+	color: white;
+}
+
+.last-entity-title {
+	border-bottom: 2px solid #1dbaad;
+	display: inline-block;
+	padding-bottom: 4px;
+	margin-bottom: 15px;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.block-short-post {
+	background: rgba(29, 186, 173, 0.5);
+}
+
+.block-short-post h4 {
+	padding: 10px;
+}
+
+#homepage-third-section {
+	margin-bottom: 120px;
+}
+
+#homepage-third-section h2 {
+	text-align: center;
+	font-family: 'Hammersmith One', sans-serif;
+	text-transform: uppercase;
+	color:  #494949;
+	margin-bottom: 40px;
+}
+
+.person-description {
+	margin-bottom: 25px;
+	text-align: justify;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.persona-img {
+	text-align: center;
+}
+
+#contact-button {
+	margin-top: 60px;
+}
+
+#contact-button a {
+	text-decoration: none;
+}
+
+#contact-button button {
+	display: block;
+	margin: 0 auto;
+	padding: 10px 30px;
+	background-color: #1dbaad;
+	font-family: 'Hammersmith One', sans-serif;
+	text-transform: uppercase;
+	color: white;
+	font-size: 20px;
+	box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+#contact-button button:hover {
+	box-shadow: none;
+}
+
+

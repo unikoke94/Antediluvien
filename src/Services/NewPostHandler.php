@@ -45,11 +45,10 @@ class NewPostHandler
 
 			if($form->isSubmitted() && $form->isValid()) {
 				$file = $post->getImage();
-				$fileName = md5(uniqid().'.'.$file->guessExtension());
+				$fileName = md5(uniqid()).'.'.$file->guessExtension();
 				$file->move(
-					$this->container->getParameter('images_directory'),
-					$fileName
-					);
+					$this->container->getParameter('images_directory'), $fileName
+				);
 
 				$post->setImage($fileName);
 				$this->flusher->flushEntity($post);
