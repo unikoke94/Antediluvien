@@ -29,4 +29,14 @@ class PostRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
+
+    public function findAllPosts()
+    {
+        return $this->createQueryBuilder('p')
+            ->where('p.id is not null')
+            ->orderBy('p.id', 'DESC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 }

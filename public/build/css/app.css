@@ -1,3 +1,7 @@
+/* GENERAL */
+
+
+
 /* HEADER */
 #header {
 	background: #f4f4f4;
@@ -147,10 +151,10 @@ p .green-text {
 }
 
 .block-short-post {
-	background: rgba(29, 186, 173, 0.5);
+	background: rgba(29, 186, 173, 0.7);
 }
 
-.block-short-post h4 {
+.block-short-post h4, .block-short-post p {
 	padding: 10px;
 }
 
@@ -206,4 +210,41 @@ p .green-text {
 	box-shadow: none;
 }
 
+
+
+/* BLOG LIST */
+#blog-list {
+	background: #f4f4f4;
+	padding-bottom: 120px;
+}
+
+#blog-list h2 {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 35px;
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 75px;
+}
+
+#block-post {
+	text-align: center;
+	margin-bottom: 60px;
+}
+
+#block-post a {
+	text-decoration: none;
+	color: white;
+}
+
+#block-post h4 {
+	text-align: left;
+}
+
+#post-date {
+	margin-top: 5px;
+	float: right;
+	font-size: 14px;
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 300;
+}
 

@@ -33,7 +33,7 @@ class AdminHandler
 
 	private function generatePosts()
 	{
-		$posts = $this->postRepo->findAll();
+		$posts = $this->postRepo->findAllPosts();
 		return $posts;
 	} 
 

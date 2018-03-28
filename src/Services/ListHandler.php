@@ -23,7 +23,7 @@ class ListHandler
 	public function generatePosts()
 	{
 		//(pagination ?)
-		$posts = $this->postRepo->findAll();
+		$posts = $this->postRepo->findAllPosts();
 		return $posts;
 	}
 
