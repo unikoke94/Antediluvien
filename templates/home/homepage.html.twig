@@ -4,85 +4,90 @@
 
 {% block body %}
 
-	<div class="container" id="homepage-first-section">
-		<div class="row">
-			<div class="col-md-4 col-6">
-				<h2>
-					<span class="green-text">Antédiluvien</span>, 
-					<br>
-					L'archéologie
-					<br>
-					Pour tous.
-				</h2>
-			</div>
-			<div class="col-md-4 col-6">
-				<p>
-					Retrouvez et découvrez <span class="green-text">l'actualité archéologique</span> pré- & protohistorique, au travers <span class="green-text">d'articles et de vidéos</span> thématiques.
-				</p>
-			</div>
-			<div class="col-md-4">
-				<img src="{{ asset('build/img/logo.svg') }}" width="250px" height="190px">
+	<div class="container-fluid" id="block-second">
+		<div class="container" id="homepage-first-section">
+			<div class="row">
+				<div class="col-md-4 col-6">
+					<h2>
+						<span class="green-text">Antédiluvien</span>, 
+						<br>
+						L'archéologie
+						<br>
+						Pour tous.
+					</h2>
+				</div>
+				<div class="col-md-4 col-6">
+					<p>
+						Retrouvez et découvrez <span class="green-text">l'actualité archéologique</span> pré- & protohistorique, au travers <span class="green-text">d'articles et de vidéos</span> thématiques.
+					</p>
+				</div>
+				<div class="col-md-4">
+					<img src="{{ asset('build/img/logo.svg') }}" width="250px" height="190px">
+				</div>
 			</div>
 		</div>
-	</div>
 
-	<div class="container" id="homepage-second-section">
-		<div class="row">
-			<div class="col-md-6 col-12"><!-- post card -->
-			<h4 class="last-entity-title">Notre dernier article</h4>
-				{% if post != null %}
-					<a href="{{ path('blog_single', { 'id': post.id }) }}">
-						<div id="last-post" style="background-image: url({{ asset('build/img/'~post.image|raw) }}); background-size: cover;" title="{{ post.title }}">
-							<div class="block-short-post">
-								<h4>{{ post.title }}</h4>
+		<div class="container" id="homepage-second-section">
+			<div class="row">
+				<div class="col-md-6 col-12 block-last"><!-- post card -->
+				<h4 class="last-entity-title">Dernier article</h4>
+					{% if post != null %}
+						<a href="{{ path('blog_single', { 'id': post.id }) }}">
+							<div id="last-post" style="background-image: url({{ asset('build/img/'~post.image|raw) }}); background-size: cover;" title="{{ post.title }}">
+								<div class="block-short-post">
+									<h4>{{ post.title }}</h4>
+								</div>
 							</div>
+						</a>
+					{% else %}
+						Pas d'article
+					{% endif %}	
+				</div>
+				<div class="col-md-6 col-12 block-last"><!-- video card -->
+				<h4 class="last-entity-title">Dernière vidéo</h4>
+					{% if video != null %}
+						<div id="last-video">
+							<iframe width="400" height="280" src="https://www.youtube.com/embed/{{ video.youtubeId }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 						</div>
-					</a>
-				{% else %}
-					Pas d'article
-				{% endif %}	
-			</div>
-			<div class="col-md-6 col-12"><!-- video card -->
-			<h4 class="last-entity-title">Notre dernière vidéo</h4>
-				{% if video != null %}
-					<div id="last-video">
-						<iframe width="400" height="280" src="https://www.youtube.com/embed/{{ video.youtubeId }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-					</div>
-				{% else %}
-					Pas de vidéo
-				{% endif %}	
+					{% else %}
+						Pas de vidéo
+					{% endif %}	
+				</div>
 			</div>
 		</div>
 	</div>
+	
 
-	<div class="container" id="homepage-third-section">
-		<h2>L'association</h2>
-		<div class="row person-description">
-			<div class="col-2 persona-img">
-				<img src="{{ asset('build/img/woman.png') }}" width="120px" height="120px" alt="Antédiluvien association">
+	<div class="container-fluid" id="block-third">
+		<div class="container" id="homepage-third-section">
+			<h2>L'association</h2>
+			<div class="row person-description">
+				<div class="col-2 persona-img">
+					<img src="{{ asset('build/img/woman.png') }}" width="120px" height="120px" alt="Antédiluvien association">
+				</div>
+				<div class="col-7">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua.</p>
+				</div>
 			</div>
-			<div class="col-7">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua.</p>
+			<div class="row person-description">
+				<div class="offset-3 col-7">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua.</p>
+				</div>
+				<div class="col-2 persona-img">
+					<img src="{{ asset('build/img/man.png') }}" width="120px" height="120px" alt="Antédiluvien association">
+				</div>
 			</div>
-		</div>
-		<div class="row person-description">
-			<div class="offset-3 col-7">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua.</p>
+			<div id="contact-button">
+				<a href="{{ path('contact') }}"><button type="button" class="btn">Contactez-nous</button></a>
 			</div>
-			<div class="col-2 persona-img">
-				<img src="{{ asset('build/img/man.png') }}" width="120px" height="120px" alt="Antédiluvien association">
-			</div>
-		</div>
-		<div id="contact-button">
-			<a href="{{ path('contact') }}"><button type="button" class="btn">Contactez-nous</button></a>
 		</div>
 	</div>
 

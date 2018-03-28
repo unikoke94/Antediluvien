@@ -1,5 +1,6 @@
 /* HEADER */
 #header {
+	background: #f4f4f4;
 	padding-top: 10px;
 }
 
@@ -52,7 +53,7 @@
 /* FOOTER */
 #footer {
 	padding: 40px 20px 30px;
-	background: #494949;
+	background: #282828;
 	color: white
 }
 
@@ -85,6 +86,10 @@
 
 
 /* HOMEPAGE */
+#block-second {
+	background: #f4f4f4;
+}
+
 #homepage-first-section {
 	margin-bottom: 120px;
 }
@@ -109,7 +114,12 @@ p .green-text {
 	font-weight: bold;
 }
 
+.block-last {
+	text-align: center;
+}
+
 #last-post {
+	display: inline-block;
 	width: 400px;
 	height: 280px;
 }
@@ -120,7 +130,7 @@ p .green-text {
 }
 
 #homepage-second-section {
-	margin-bottom: 120px;
+	padding-bottom: 120px;
 }
 
 #homepage-second-section a {
@@ -144,19 +154,25 @@ p .green-text {
 	padding: 10px;
 }
 
+#block-third {
+	background: #494949;
+}
+
 #homepage-third-section {
-	margin-bottom: 120px;
+	padding-top: 40px;
+	padding-bottom: 120px;
 }
 
 #homepage-third-section h2 {
 	text-align: center;
 	font-family: 'Hammersmith One', sans-serif;
 	text-transform: uppercase;
-	color:  #494949;
+	color:  #e5e5e5;
 	margin-bottom: 40px;
 }
 
 .person-description {
+	color: #e5e5e5;
 	margin-bottom: 25px;
 	text-align: justify;
 	font-family: 'Ubuntu', sans-serif;
