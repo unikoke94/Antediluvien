@@ -4,6 +4,58 @@
 
 {% block body %}
 
+	<div class="container-fluid" id="contact">
+		<h2>Contactez-nous<br><i data-feather="mail"></i></h2>
 
+		<div class="container">
+			
+
+			<div id="form-contact">
+				{{ form_start(form) }}
+
+				<div class="form-row">
+					<div class="col-md-6 col-12">
+						{{ form_label(form.firstname) }}
+						{{ form_widget(form.firstname, {'attr': {
+						'class': 'form-control'
+						}}) }}
+					</div>
+					<div class="col-md-6 col-12">
+						{{ form_label(form.lastname) }}
+						{{ form_widget(form.lastname, {'attr': {
+						'class': 'form-control'
+						}}) }}
+					</div>
+				</div>
+
+				<div class="form-group">
+					{{ form_label(form.email) }}
+					{{ form_widget(form.email, {'attr': {
+					'class': 'form-control'
+					}}) }}
+				</div>
+
+				<div class="form-group">
+					{{ form_label(form.subject) }}
+					{{ form_widget(form.subject, {'attr': {
+					'class': 'form-control'
+					}}) }}
+				</div>
+
+				<div class="form-group">
+					{{ form_label(form.message) }}
+					{{ form_widget(form.message, {'attr': {
+					'class': 'form-control',
+					'rows' : 6
+					}}) }}
+				</div>
+
+				{{ form_row(form.Envoyer, {'attr': {'class': 'btn'}}) }}
+
+				{{ form_end(form) }}
+
+			</div>
+		</div>
+	</div>
 
 {% endblock %}

@@ -31,7 +31,7 @@ class Post
     private $datePost;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="text")
      */
     private $content;
 

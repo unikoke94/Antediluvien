@@ -4,17 +4,20 @@
 
 {% block body %}
 
-	<div class="container" id="videos-list">
-		{% for video in videos %}
-			{{ video.name }}
-			<div id="video">
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/{{ video.youtubeId }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-			</div>
-		{% else %}
-			<div id="no-video">
-				Aucune vidéo
-			</div>
-		{% endfor %}
+	<div class="container-fluid" id="videos-list">
+		<h2>Vidéos<br><i data-feather="video"></i></h2>
+		<div class="container">
+			{% for video in videos %}
+				<div id="video">
+					<h3>{{ video.name }}</h3>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/{{ video.youtubeId }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</div>
+			{% else %}
+				<div id="no-video">
+					Aucune vidéo
+				</div>
+			{% endfor %}
+		</div>
 	</div>
 
 {% endblock %}

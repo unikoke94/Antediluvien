@@ -4,6 +4,75 @@
 
 {% block body %}
 
-	{{ post.title }}
+	<div class="container-fluid" id="post-single">
+		<div id="post-image">
+			<img src="{{ asset('build/img/'~post.image|raw) }}" alt="{{ post.title }}">
+		</div>
+
+		<div id="post-categories">
+			
+		</div>
+
+		<div class="container" id="post-data">
+			<div id="post-header">
+				<h2>{{ post.title }}</h2>
+				<p id="post-date">{{ post.datePost|date('d-m-y') }}</p>
+			</div>
+
+			<div id="post-content">
+				{{ post.content|nl2br }}
+			</div>
+
+			<div id="horizontal-ligne"></div>
+
+			<div id="block-comments">
+				<h3>Commentaires</h3>
+
+				<div id="form-comment">
+					{{ form_start(form) }}
+
+					<div class="form-row">
+						<div class="col-md-6 col-12">
+							{{ form_label(form.username) }}
+							{{ form_widget(form.username, {'attr': {
+							'class': 'form-control'
+							}}) }}
+						</div>
+						<div class="col-md-6 col-12">
+							{{ form_label(form.email) }}
+							{{ form_widget(form.email, {'attr': {
+							'class': 'form-control'
+							}}) }}
+						</div>
+					</div>
+
+					<div class="form-group">
+						{{ form_label(form.content) }}
+						{{ form_widget(form.content, {'attr': {
+						'class': 'form-control',
+						'rows' : 4
+						}}) }}
+					</div>
+
+					{{ form_row(form.Poster, {'attr': {'class': 'btn'}}) }}
+
+					{{ form_end(form) }}
+				</div>
+
+				<div id="comments">
+					{% for comment in post.comments %}
+						<div id="block-comment">
+							
+						</div>
+					{% else %}
+						<div id="no-comment-yet">
+							Pas de commentaire.
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+
+		</div>
+	</div>
 
 {% endblock %}

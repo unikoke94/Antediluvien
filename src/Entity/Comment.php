@@ -23,6 +23,11 @@ class Comment
     private $username;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $email;
+
+    /**
      * @ORM\Column(type="datetime")
      */
     private $dateComment;
@@ -63,6 +68,17 @@ class Comment
     {
     	$this->username = $username;
     	return $this;
+    }
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function setEmail($email)
+    {
+        $this->email = $email;
+        return $this;
     }
 
     public function getDateComment()

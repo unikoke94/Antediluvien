@@ -1,5 +1,7 @@
 /* GENERAL */
-
+textarea {
+	resize: none;
+}
 
 
 /* HEADER */
@@ -147,7 +149,7 @@ p .green-text {
 	display: inline-block;
 	padding-bottom: 4px;
 	margin-bottom: 15px;
-	font-family: 'Ubuntu', sans-serif;
+	font-family: 'Hammersmith One', sans-serif;
 }
 
 .block-short-post {
@@ -216,14 +218,24 @@ p .green-text {
 #blog-list {
 	background: #f4f4f4;
 	padding-bottom: 120px;
+	padding-right: 0;
+	padding-left: 0;
 }
 
 #blog-list h2 {
-	font-family: 'Ubuntu', sans-serif;
+	padding: 20px 0 10px;
+	background: #1dbaad;
+	font-family: 'Hammersmith One', sans-serif;
+	color: #f4f4f4;
 	font-size: 35px;
 	text-transform: uppercase;
 	text-align: center;
-	margin-bottom: 75px;
+	margin-bottom: 75px; 
+}
+
+#blog-list h2 .feather {
+	width: 35px;
+	height: 35px;
 }
 
 #block-post {
@@ -248,3 +260,176 @@ p .green-text {
 	font-weight: 300;
 }
 
+
+/* BLOG SINGLE */
+#post-single {
+	padding-left: 0;
+	padding-right: 0;
+	background: #f4f4f4;
+}
+
+#post-image {
+	width: 100%;
+	height: 350px;
+	overflow: hidden;
+	margin-bottom: 50px;
+	box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.7);
+}
+
+#post-image img {
+	width: 100%;
+	position: relative;
+	top: -100px;
+}
+
+#post-header {
+	margin-bottom: 90px;
+}
+
+#post-header h2 {
+	font-family: 'Hammersmith One', sans-serif;
+	font-size: 40px;
+	color: #494949;
+	text-align: center;
+}
+
+#post-header #post-date {
+	float: right;
+	color: grey;
+}
+
+#post-content {
+	text-align: justify;
+	margin-bottom: 65px;
+	color: #494949;
+}
+
+#horizontal-ligne {
+	border-bottom: 1px solid black;
+	width: 100%;
+	margin-bottom: 35px;
+}
+
+#block-comments h3 {
+	font-family: 'Hammersmith One', sans-serif;
+	margin-bottom: 25px;
+}
+
+#form-comment {
+	padding-bottom: 90px;
+}
+
+#form-comment label {
+	font-family: 'Hammersmith One', sans-serif;
+}
+
+#form-comment .form-group {
+	margin-top: 15px;
+}
+
+#form-comment button {
+	margin-top: 10px;
+	float: right;
+	font-family: 'Hammersmith One', sans-serif;
+	font-size: 17px;
+	color: white;
+	background: #1dbaad;
+	padding: 10px 40px;
+	border-radius: 3px;
+	box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+	text-transform: uppercase;	
+}
+
+#form-comment button:hover {
+	box-shadow: none;
+}
+
+#comments {
+	margin-top: 50px;
+}
+
+
+
+
+/* VIDEOS LIST */
+#videos-list {
+	background: #f4f4f4;
+	padding-bottom: 150px;
+	padding-right: 0;
+	padding-left: 0;
+}
+
+#videos-list h2 {
+	padding: 20px 0 10px;
+	background: #1dbaad;
+	font-family: 'Hammersmith One', sans-serif;
+	color: #f4f4f4;
+	font-size: 35px;
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 75px; 
+}
+
+#videos-list h2 .feather {
+	width: 35px;
+	height: 35px;
+}
+
+#video {
+	text-align: center;
+}
+
+#video h3 {
+	color: #494949;
+}
+
+
+/* CONTACT */
+#contact {
+	padding-left: 0;
+	padding-right: 0;
+	background: #f4f4f4;
+	padding-bottom: 150px;
+}
+
+#contact h2 {
+	padding: 20px 0 10px;
+	background: #1dbaad;
+	font-family: 'Hammersmith One', sans-serif;
+	color: #f4f4f4;
+	font-size: 35px;
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 75px; 
+}
+
+#contact h2 .feather {
+	width: 35px;
+	height: 35px;
+}
+
+#form-contact .form-group {
+	margin-top: 15px;
+}
+
+#form-contact label {
+	font-family: 'Hammersmith One', sans-serif;
+	color: #494949;
+}
+
+#form-contact button {
+	display: block;
+	margin: 20px auto;
+	font-family: 'Hammersmith One', sans-serif;
+	font-size: 17px;
+	color: white;
+	background: #1dbaad;
+	padding: 10px 40px;
+	border-radius: 3px;
+	box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+	text-transform: uppercase;	
+}
+
+#form-contact button:hover {
+	box-shadow: none;
+}
