@@ -29,16 +29,13 @@ class CategoryRepository extends ServiceEntityRepository
         ;        
     }
 
-    /*
-    public function findBySomething($value)
+    public function findAllCategories()
     {
         return $this->createQueryBuilder('c')
-            ->where('c.something = :value')->setParameter('value', $value)
-            ->orderBy('c.id', 'ASC')
-            ->setMaxResults(10)
+            ->where('c.id is not null')
+            ->orderBy('c.id', 'DESC')
             ->getQuery()
             ->getResult()
         ;
     }
-    */
 }

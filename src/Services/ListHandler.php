@@ -30,7 +30,7 @@ class ListHandler
 	public function generateVideos()
 	{
 		//(pagination ?)
-		$videos = $this->videoRepo->findAll();
+		$videos = $this->videoRepo->findAllVideos();
 		return $videos;
 	}
 }

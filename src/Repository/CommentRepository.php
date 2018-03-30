@@ -34,7 +34,17 @@ class CommentRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('c')
             ->where('c.post = :post_id')->setParameter('post_id', $postId)
-            ->orderBy('c.id', 'ASC')
+            ->orderBy('c.id', 'DESC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+    public function findAllComments()
+    {
+        return $this->createQueryBuilder('c')
+            ->where('c.id is not null')
+            ->orderBy('c.id', 'DESC')
             ->getQuery()
             ->getResult()
         ;

@@ -29,6 +29,16 @@ class VideoRepository extends ServiceEntityRepository
         ;                
     }
 
+    public function findAllVideos()
+    {
+        return $this->createQueryBuilder('v')
+            ->where('v.id is not null')
+            ->orderBy('v.id', 'DESC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
     /*
     public function findBySomething($value)
     {

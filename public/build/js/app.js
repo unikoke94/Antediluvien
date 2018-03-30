@@ -38,5 +38,6 @@ $(function() {
 			bulle.remove();
 		}
 		
-	});*/	
+	});*/
+	document.forms['comment'].reset();	
 })

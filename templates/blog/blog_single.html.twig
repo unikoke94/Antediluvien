@@ -62,7 +62,14 @@
 				<div id="comments">
 					{% for comment in post.comments %}
 						<div id="block-comment">
-							
+							<p><span id="username-comment">{{ comment.username }}</span> 
+							<span id="date-comment">{{ comment.dateComment|date('d-m-y') }}</span>
+							{% if comment.reported == true %}
+								<p id="reported-comment">Signalé</p>
+							{% else %}
+								<a href="{{ path('blog_comment_report', { 'postId': post.id, 'id': comment.id }) }}"><button class="btn" id="report-comment">Signaler</button></a></p>
+							{% endif %}
+							<p id="content-comment"> {{ comment.content }} </p>
 						</div>
 					{% else %}
 						<div id="no-comment-yet">

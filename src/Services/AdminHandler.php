@@ -39,13 +39,13 @@ class AdminHandler
 
 	private function generateCategories()
 	{
-		$categories = $this->categoryRepo->findAll();
+		$categories = $this->categoryRepo->findAllCategories();
 		return $categories;
 	}
 
 	private function generateVideos()
 	{
-		$videos = $this->videoRepo->findAll();
+		$videos = $this->videoRepo->findAllVideos();
 		return $videos;
 	}
 

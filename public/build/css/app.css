@@ -346,6 +346,51 @@ p .green-text {
 
 #comments {
 	margin-top: 50px;
+	padding-bottom: 100px;
+}
+
+#block-comment {
+	margin-bottom: 60px;
+	padding: 15px;
+	border-radius: 2px;
+	background: white;
+	box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+	font-family: 'Hammersmith One', sans-serif;
+	color: #494949
+}
+
+#username-comment {
+	font-size: 18px;
+}
+
+#date-comment {
+	color: grey;
+	font-size: 14px;
+	margin-left: 10px;
+}
+
+#content-comment {
+	margin: 12px;
+}
+
+#report-comment {
+	font-size: 15px;
+	float: right;
+	color: white;
+	background: #ea5b5b;
+	border-radius: 3px;
+	box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+	text-transform: uppercase;
+	padding: 10px 30px;
+}
+
+#report-comment:hover {
+	box-shadow: none;
+} 
+
+#reported-comment {
+	float: right;
+	color: #ea5b5b;
 }
 
 
@@ -432,4 +477,55 @@ p .green-text {
 
 #form-contact button:hover {
 	box-shadow: none;
+}
+
+
+
+/* MENTIONS LEGALES */
+#mentions-legales {
+	background: #f4f4f4;
+}
+
+#mentions-legales h2 {
+	font-family: 'Hammersmith One', sans-serif;
+	color: #494949;
+	font-size: 35px;
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 75px;	
+}
+
+#block-mentions {
+	padding-bottom: 120px;
+	color: #494949;
+}
+
+
+
+/* A PROPOS */
+#about {
+	padding-left: 0;
+	padding-right: 0;
+	background: #f4f4f4;
+	padding-bottom: 150px;
+}
+
+#about h2 {
+	padding: 20px 0 10px;
+	background: #1dbaad;
+	font-family: 'Hammersmith One', sans-serif;
+	color: #f4f4f4;
+	font-size: 35px;
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 75px; 
+}
+
+#about h2 .feather {
+	width: 35px;
+	height: 35px;
+}
+
+#about p {
+	color: #494949;
 }
