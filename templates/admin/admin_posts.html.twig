@@ -1,6 +1,10 @@
 <div id="admin-posts">
 
 	<!-- BOUTONS NEW POST - NEW CATEGORY -->
+	<div id="new-post-admin">
+		<a href="{{ path('new_post') }}"><button class="btn"><i data-feather="plus-circle"></i><br>Nouvel article</button></a>
+		<a href="{{ path('new_category') }}"><button class="btn"><i data-feather="plus-circle"></i><br>Nouvelle catégorie</button></a>
+	</div>
 
 	{% for post in posts %}
 		<div id="admin-post">
@@ -19,9 +23,51 @@
 					<!-- EDIT BUTTON -->
 					<button type="button" class="btn edit-button" data-toggle="modal" data-target="#post-edit-{{ post.id }}"><i data-feather="edit"></i>  <span class="admin-buttons">éditer</span></button>
 
+					<div class="modal fade" id="post-edit-{{ post.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					  <div class="modal-dialog" role="document">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <h5 class="modal-title" id="exampleModalLabel"><i data-feather="edit"></i> Modification d'article</h5>
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+					      </div>
+					      <div class="modal-body">
+					        Etes-vous certain(e) de bien vouloir modifier cet article ?
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+					        <a href="{{ path('edit_post', { 'id': post.id }) }}"><button type="button" class="btn confirm-edit">Confirmer</button></a>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+
 
 					<!-- DELETE BUTTON -->
 					<button type="button" class="btn delete-button" data-toggle="modal" data-target="#post-delete-{{ post.id }}"><i data-feather="trash"></i>  <span class="admin-buttons">supprimer</span></button>
+
+					<div class="modal fade" id="post-delete-{{ post.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					  <div class="modal-dialog" role="document">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <h5 class="modal-title" id="exampleModalLabel"><i data-feather="alert-triangle"></i> Suppression d'article</h5>
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+					      </div>
+					      <div class="modal-body">
+					        Etes-vous certain(e) de bien vouloir supprimer cet article ?
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+					        <a href="{{ path('delete_post', {'id': post.id }) }}"><button type="button" class="btn confirm-delete">Confirmer</button></a>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+
+
 				</div>
 			</div>
 			

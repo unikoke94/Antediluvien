@@ -1,1 +1,84 @@
-Commentaires
+<div id="admin-comments">
+
+	{% if reportedComments %}
+		<h3><i data-feather="alert-triangle"></i> Des commentaires on été signalés</h3>
+
+		<table class="table table-hover table-bordered" id="table-comments">
+		  <thead>
+		    <tr>
+		      <th scope="col">Pseudo</th>
+		      <th scope="col">Message</th>
+		      <th scope="col">Actions</th>
+		    </tr>
+		  </thead>
+		{% for reportedComment in reportedComments %}
+
+			  <tbody>
+			    <tr>
+			      <th scope="row">{{ reportedComment.username|slice(0, 25) }}{% if reportedComment.username|length > 25 %}...{% endif %}</th>
+			      <td>{{ reportedComment.content|slice(0, 50) }}{% if reportedComment.content|length > 50 %}...{% endif %} </td>
+			      <td>
+			      	<div id="admin-comment-buttons">
+			     
+				      	<!-- CLEAN COMMENT BUTTON -->
+				      	<button title="Rétablir" type="button" class="btn clean-comment-button" data-toggle="modal" data-target="#comment-clean-{{ reportedComment.id }}"><i data-feather="check"></i>  <span class="admin-buttons"></span></button>
+
+						<div class="modal fade" id="comment-clean-{{ reportedComment.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						  <div class="modal-dialog" role="document">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <h5 class="modal-title" id="exampleModalLabel"><i data-feather="check"></i> Rétablissement de commentaire</h5>
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						          <span aria-hidden="true">&times;</span>
+						        </button>
+						      </div>
+						      <div class="modal-body">
+						        Etes-vous certain(e) de bien vouloir rétablir ce commentaire ?
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+						        <a href="{{ path('reset_comment', { 'id': reportedComment.id }) }}"><button type="button" class="btn confirm-clean">Confirmer</button></a>
+						      </div>
+						    </div>
+						  </div>
+						</div>
+
+
+						<!-- DELETE COMMENT BUTTON -->
+						<button title="Supprimer" type="button" class="btn delete-comment-button" data-toggle="modal" data-target="#comment-delete-{{ reportedComment.id }}"><i data-feather="trash"></i>  <span class="admin-buttons"></span></button>
+
+						<div class="modal fade" id="comment-delete-{{ reportedComment.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						  <div class="modal-dialog" role="document">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <h5 class="modal-title" id="exampleModalLabel"><i data-feather="alert-triangle"></i> Suppression de commentaire</h5>
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						          <span aria-hidden="true">&times;</span>
+						        </button>
+						      </div>
+						      <div class="modal-body">
+						        Etes-vous certain(e) de bien vouloir supprimer ce commentaire ?
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+						        <a href="{{ path('delete_comment', {'id': reportedComment.id }) }}"><button type="button" class="btn confirm-delete">Confirmer</button></a>
+						      </div>
+						    </div>
+						  </div>
+						</div>
+
+					</div>
+
+			      </td>
+			    </tr>
+			  </tbody>
+	
+		{% endfor %}
+		</table>
+	{% else %}
+		
+		<p>Aucun commentaire signalé</p>
+		
+	{% endif %}
+	
+</div>
