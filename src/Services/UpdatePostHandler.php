@@ -44,7 +44,7 @@ class UpdatePostHandler
 
 	public function generateData(Request $request, $id)
 	{
-		if ($this->checker->isGrandted('ROLE_ADMIN')) {
+		if ($this->checker->isGranted('ROLE_ADMIN')) {
 			$post = $this->generatePost($id);
 			$form = $this->generateForm($post);
 			$form->handleRequest($request);

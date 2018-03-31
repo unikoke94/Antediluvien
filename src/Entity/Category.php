@@ -30,14 +30,10 @@ class Category
      */
     private $image;
 
-    /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Post", inversedBy="categories", cascade={"persist"})
-     */
-    private $posts;
 
-    public function __consctruct()
+    public function __toString()
     {
-    	$this->posts = new ArrayCollection();
+        return $this->getName();
     }
 
     public function getId()
@@ -64,17 +60,6 @@ class Category
     public function setImage($image)
     {
     	$this->image = $image;
-    	return $this;
-    }
-
-    public function getPosts()
-    {
-    	return $this->posts;
-    }
-
-    public function setPosts(Post $posts)
-    {
-    	$this->posts = $posts;
     	return $this;
     }
 }

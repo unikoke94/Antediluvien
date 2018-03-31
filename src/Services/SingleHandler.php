@@ -54,8 +54,7 @@ class SingleHandler
 
 	public function reportComment($id)
 	{
-		$comment = new Comment();
-		$comment = $this->generateComment($id);
+		$comment = $this->commentRepo->find($id);
 		$comment->setReported(true);
 		$this->flusher->flushEntity($comment);
 	}

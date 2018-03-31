@@ -48,10 +48,12 @@ textarea {
 
 .infobulle {
 	position: absolute;
-	background-color: #212529;
+	background-color: #1dbaad;
 	border-radius: 3px;
-	padding: 10px;
-	color: #e0e0e0;
+	padding: 12px 20px 10px;
+	color: white;
+	font-family: 'Hammersmith One', sans-serif;
+	text-transform: uppercase;
 }
 
 
@@ -282,6 +284,35 @@ p .green-text {
 	top: -100px;
 }
 
+#categories {
+	float: right;
+	padding-right: 65px;
+}
+
+#post-categories {
+	position: relative;
+	top: -83px;
+}
+
+#post-category {
+	background: #f4f4f4;
+	border: 2px solid #1dbaad;
+	border-radius: 50%;
+	width: 70px;
+	height: 70px;
+	line-height: 60px;
+	text-align: center;
+	box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+	margin-left: 35px;
+	margin-right: 35px;
+}
+
+#post-category img {
+	vertical-align: middle;
+	width: 55%;
+	height: auto;
+}
+
 #post-header {
 	margin-bottom: 90px;
 }
@@ -373,7 +404,7 @@ p .green-text {
 	margin: 12px;
 }
 
-#report-comment {
+.report-comment {
 	font-size: 15px;
 	float: right;
 	color: white;
@@ -384,13 +415,24 @@ p .green-text {
 	padding: 10px 30px;
 }
 
-#report-comment:hover {
+.report-comment:hover {
 	box-shadow: none;
 } 
 
 #reported-comment {
 	float: right;
 	color: #ea5b5b;
+}
+
+#block-comment .modal-header h5 .feather {
+	color: #ea5b5b;
+	width: 30px;
+	height: 30px;
+}
+
+.confirm-report {
+	background: #ea5b5b;
+	color: white;
 }
 
 
@@ -528,4 +570,89 @@ p .green-text {
 
 #about p {
 	color: #494949;
+}
+
+
+
+/* ADMIN */
+#admin {
+	padding-left: 0;
+	padding-right: 0;
+	background: #f4f4f4;
+	padding-bottom: 150px;
+}
+
+#admin h2 {
+	padding: 20px 0 10px;
+	background: #1dbaad;
+	font-family: 'Hammersmith One', sans-serif;
+	color: #f4f4f4;
+	font-size: 35px;
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 75px; 
+}
+
+#admin h2 .feather {
+	width: 35px;
+	height: 35px;
+}
+
+/* ADMIN POSTS */
+#admin-posts {
+	margin-top: 100px;
+}
+
+#admin-post {
+	width: 100%;
+	height: 180px;
+	margin-top: 80px;
+	background: white;
+	box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+#admin-post-img {
+	width: 180px;
+	height: 180px;
+}
+
+#admin-post-data {
+	padding: 20px;
+	border-right: 2px solid #494949;
+}
+
+#admin-post-title {
+	font-family: 'Hammersmith One', sans-serif;
+	color: #494949;
+}
+
+#admin-post-content {
+	padding-top: 25px;
+}
+
+#admin-post-action {
+	background: #494949;
+	padding-top: 25px;
+}
+
+#admin-post-action button {
+	display: block;
+	margin: 15px auto;
+	color: white;
+	font-family: 'Hammersmith One', sans-serif;
+	text-transform: uppercase;
+	width: 50%;
+	box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+#admin-post-action button:hover {
+	box-shadow: none;
+}
+
+.edit-button {
+	background: #1dbaad;
+}
+
+.delete-button {
+	background: #ea5b5b;
 }

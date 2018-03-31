@@ -20,7 +20,7 @@ class CategoryType extends AbstractType
 			->add('image', FileType::class, array(
 				'label'      => 'Image de la catégorie',
 				'required'   => true,
-				"data-class" => null
+				'data_class' => null
 				))
 			->add('Publier', SubmitType::class)
 		;	

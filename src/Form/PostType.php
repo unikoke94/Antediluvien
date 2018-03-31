@@ -22,12 +22,13 @@ class PostType extends AbstractType
 				))
 			->add('image', FileType::class, array(
 				'label'      => 'Image de l\'article',
-				'required'   => true
-				//"data-class" => null
+				'required'   => true,
+				'data_class' => null
 				))
 			->add('categories', EntityType::class, array(
 				'class'    => 'App:Category',
 				'label'    => 'Catégorie(s)',
+				'multiple' => true,
 				'required' => false
 				))
 			->add('content', TextareaType::class, array(

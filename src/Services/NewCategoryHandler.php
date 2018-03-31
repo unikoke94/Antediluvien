@@ -45,11 +45,10 @@ class NewCategoryHandler
 
 			if($form->isSubmitted() && $form->isValid()) {
 				$file = $category->getImage();
-				$fileName = md5(uniqid().'.'.$file->guessExtension());
+				$fileName = md5(uniqid()).'.'.$file->guessExtension();
 				$file->move(
-					$this->container->getParameter('images_directory'),
-					$filename
-					);
+					$this->container->getParameter('images_directory'), $fileName
+				);
 
 				$category->setImage($fileName);
 				$this->flusher->flushEntity($category);

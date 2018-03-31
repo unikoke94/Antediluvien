@@ -1,0 +1,32 @@
+<div id="admin-posts">
+
+	<!-- BOUTONS NEW POST - NEW CATEGORY -->
+
+	{% for post in posts %}
+		<div id="admin-post">
+			<div class="row">
+				<div class="col-md-2 col-6" id="admin-post-img" style="background-image: url({{ asset('build/img/'~post.image|raw) }}); background-size: cover;" title="{{ post.title }}"></div>
+				<div class="col-md-7 col-6" id="admin-post-data">
+					<div id="admin-post-title">
+						<h4>{{ post.title }}</h4>
+					</div>
+					<div id="admin-post-content">
+						<p>{{ post.content|slice(0, 70) }}...</p>
+					</div>
+				</div>
+		
+				<div class="col-md-3 col-12" id="admin-post-action">
+					<!-- EDIT BUTTON -->
+					<button type="button" class="btn edit-button" data-toggle="modal" data-target="#post-edit-{{ post.id }}"><i data-feather="edit"></i>  <span class="admin-buttons">éditer</span></button>
+
+
+					<!-- DELETE BUTTON -->
+					<button type="button" class="btn delete-button" data-toggle="modal" data-target="#post-delete-{{ post.id }}"><i data-feather="trash"></i>  <span class="admin-buttons">supprimer</span></button>
+				</div>
+			</div>
+			
+		</div>
+	{% else %}
+		<p>Pas d'articles</p>
+	{% endfor %}
+</div>

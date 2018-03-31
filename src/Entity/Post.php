@@ -47,7 +47,7 @@ class Post
     private $comments;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Category", mappedBy="posts", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="App\Entity\Category", cascade={"persist"})
      */
     private $categories;
 
@@ -140,11 +140,9 @@ class Post
     	return $this;
     }
 
-    public function addCategories(Category $categories)
+    public function addCategory(Category $category)
     {
-    	$this->categories[] = $categories;
-    	$categories->setPost($this);
-
+    	$this->categories[] = $category;
     	return $this;
     }
 

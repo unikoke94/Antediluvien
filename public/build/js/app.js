@@ -1,6 +1,6 @@
 $(function() {
 	//Faire apparaître une span infobulle au survol
-	/*$('a.nav-link').mouseover(function() {
+	$('#header a.nav-link').mouseover(function() {
 		if($(this).attr('title')==='') {
 			return false;
 		}
@@ -13,7 +13,7 @@ $(function() {
 		var left = $(this).offset().left - $(this).width()/4;
 		bulle.css({
 			left: left + 20,
-			top: top,
+			top: top + 100,
 			opacity: 0
 		});
 		bulle.animate({
@@ -22,7 +22,7 @@ $(function() {
 		});
 	});
 
-	$('a.nav-link').mouseout(function() {
+	$('#header a.nav-link').mouseout(function() {
 		var bulle = $('.infobulle:last');
 		var bulles = $('.infobulle');
 
@@ -38,6 +38,5 @@ $(function() {
 			bulle.remove();
 		}
 		
-	});*/
-	document.forms['comment'].reset();	
+	});	
 })
