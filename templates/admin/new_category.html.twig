@@ -4,8 +4,38 @@
 
 {% block body %}
 
-	{{ form_start(form) }}
-	{{ form_widget(form) }}
-	{{ form_end(form) }}
+	<div class="container-fluid" id="new-category">
+		<div class="container">
+
+			<h2>Nouvelle catégorie <i data-feather="flag"></i></h2>
+			
+			<div id="new-category-form">
+				{{ form_start(form) }}
+				
+				<div class="form-row">
+					<div class="col-md-9 col-12">
+						{{ form_label(form.name) }}
+						{{ form_widget(form.name, {'attr': {
+						'class': 'form-control'
+						}}) }}
+					</div>
+					<div class="col-md-3 col-12">
+						{{ form_label(form.image) }}
+						{{ form_widget(form.image, {'attr': {
+						'class': 'form-control'
+						}}) }}
+					</div>
+				</div>
+
+				{{ form_row(form.Publier, {'attr': {'class': 'btn'}}) }}
+
+				{{ form_end(form) }}
+			</div>
+			
+
+		</div>
+	</div>
+
+	
 
 {% endblock %}

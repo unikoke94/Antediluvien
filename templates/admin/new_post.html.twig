@@ -4,8 +4,53 @@
 
 {% block body %}
 
-	{{ form_start(form) }}
-	{{ form_widget(form) }}
-	{{ form_end(form) }}
+	<div class="container-fluid" id="new-post">
+		<div class="container">
+
+			<h2>Nouvel article <i data-feather="edit"></i></h2>
+			
+			<div id="new-post-form">
+				{{ form_start(form) }}
+				
+				<div class="form-row">
+					<div class="col-md-9 col-12">
+						{{ form_label(form.title) }}
+						{{ form_widget(form.title, {'attr': {
+						'class': 'form-control'
+						}}) }}
+					</div>
+					<div class="col-md-3 col-12">
+						{{ form_label(form.image) }}
+						{{ form_widget(form.image, {'attr': {
+						'class': 'form-control'
+						}}) }}
+					</div>
+				</div>
+
+				<div class="form-group">
+					{{ form_label(form.categories) }}
+					{{ form_widget(form.categories, {'attr': {
+					'class': 'form-control'
+					}}) }}
+				</div>
+
+				<div class="form-group">
+					{{ form_label(form.content) }}
+					{{ form_widget(form.content, {'attr': {
+					'class': 'form-control',
+					'rows': 20
+					}}) }}
+				</div>
+
+				{{ form_row(form.Publier, {'attr': {'class': 'btn'}}) }}
+
+				{{ form_end(form) }}
+			</div>
+			
+
+		</div>
+	</div>
+
+	
 
 {% endblock %}

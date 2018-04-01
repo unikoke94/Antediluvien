@@ -973,7 +973,27 @@ p .green-text {
 	color: #1dbaad;
 } 
 
+@media screen and (max-width: 768px) {
+	#admin h2 {
+		font-size: 28px;
+		margin-bottom: 60px;
+	}
+
+	#admin h2 .feather {
+		width: 28px;
+		height: 28px;
+	}
+
+	#pills-tab-admin a {
+		font-size: 18px;
+	}
+}
+
 /* ADMIN POSTS */
+#admin-post-mobile {
+	display: none;
+}
+
 #admin-posts {
 	margin-top: 100px;
 }
@@ -992,7 +1012,7 @@ p .green-text {
 	text-transform: uppercase;
 	font-size: 17px;
 	background: #2a83bf;
-	width: 20%;
+	width: 28%;
 	color: white;
 	box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
 }
@@ -1019,6 +1039,11 @@ p .green-text {
 	border-right: 2px solid #494949;
 }
 
+#admin-post-title a {
+	text-decoration: none;
+	color: #494949;
+}
+
 #admin-post-title {
 	font-family: 'Hammersmith One', sans-serif;
 	color: #494949;
@@ -1039,7 +1064,7 @@ p .green-text {
 	color: white;
 	font-family: 'Hammersmith One', sans-serif;
 	text-transform: uppercase;
-	width: 50%;
+	width: 150px;
 	box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
 }
 
@@ -1055,6 +1080,68 @@ p .green-text {
 .delete-button, .confirm-delete {
 	background: #ea5b5b;
 	color: white;
+}
+
+@media screen and (max-width: 768px) {
+	#admin-post-desktop {
+		display: none;
+	}
+
+	#admin-posts {
+		margin-top: 50px;
+	}
+
+	#admin-post-mobile {
+		overflow: hidden;
+		display: block;
+	}
+
+	#new-post-admin a {
+		text-decoration: none;
+	}
+
+	#new-post-admin button {
+		display: block;
+		margin: 0 auto;
+		width: 180px;
+		font-size: 14px;
+	}
+
+	#admin-post {
+		width: 100%;
+		height: 478px;
+		margin-top: 60px;
+		background: white;
+		box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+	}
+
+	#admin-post-img {
+		width: 100%;
+		height: 150px;
+	}
+
+	#admin-post-title h4 {
+		font-size: 22px;
+	}
+
+	#admin-post-data {
+		border-right: 0;
+		padding: 25px;
+	}
+
+	#admin-post-data p {
+		font-size: 14px;
+	}
+
+	#admin-post-action {
+		padding-bottom: 25px;
+	}
+
+	#admin-post-action .edit-button, #admin-post-action .delete-button {
+		width: 55%;
+		font-size: 16px;
+	}
+
 }
 
 
@@ -1092,9 +1179,36 @@ p .green-text {
 	box-shadow: none;
 }
 
+@media screen and (max-width: 768px) {
+	#admin-comments h3 {
+		font-size: 22px;
+	}
+
+	#table-comments {
+		font-size: 14px;
+	}
+
+	#admin-comment-buttons .feather {
+		width: 15px;
+		height: 15px;
+	}
+
+	.clean-comment-button {
+		margin-bottom: 10px;
+	}
+}
+
 /* ADMIN VIDEOS */
 #admin-videos {
 	margin-top: 100px;
+}
+
+#admin-video-desktop {
+	overflow: hidden;
+}
+
+#admin-video-mobile {
+	display: none;
 }
 
 #new-video-admin {
@@ -1106,7 +1220,7 @@ p .green-text {
 	text-transform: uppercase;
 	font-size: 17px;
 	background: #2a83bf;
-	width: 20%;
+	width: 28%;
 	color: white;
 	box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
 }
@@ -1119,6 +1233,7 @@ p .green-text {
 	width: 100%;
 	height: 180px;
 	margin-top: 80px;
+	margin-bottom: 60px;
 	background: white;
 	box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
 }
@@ -1146,10 +1261,86 @@ p .green-text {
 	color: white;
 	font-family: 'Hammersmith One', sans-serif;
 	text-transform: uppercase;
-	width: 50%;
+	width: 150px;
 	box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
 }
 
 #admin-video-action button:hover {
+	box-shadow: none;
+}
+
+@media screen and (max-width: 768px) {
+	#admin-video-desktop {
+		display: none;
+	}
+
+	#admin-video-mobile {
+		display: block;
+		overflow: hidden;
+	}
+
+	#new-video-admin button {
+		width: 150px;
+		font-size: 14px;
+	}
+
+	#admin-video {
+		height: 360px;
+		margin-top: 60px;
+	}
+
+	#admin-video-url {
+		text-align: center;
+	}
+
+	#admin-video-name {
+		border-right: 0;
+	}
+
+	#admin-video-name h4 {
+		font-size: 22px;
+		padding-left: 25px;
+	}
+
+	#admin-video-action {
+		padding-bottom: 25px;
+	}
+}
+
+
+
+/* NEW POST & EDIT POST & NEW CATEGORY & NEW VIDEO */
+#new-post, #edit-post, #new-category, #new-video {
+	background: #f4f4f4;
+	padding-bottom: 100px;
+}
+
+#new-post h2, #edit-post h2, #new-category h2, #new-video h2 {
+	font-family: 'Hammersmith One', sans-serif;
+	text-transform: uppercase;
+	color: #494949;
+	margin-bottom: 50px;
+}
+
+#new-post h2 .feather, #edit-post h2 .feather, #new-category h2 .feather, #new-video h2 .feather {
+	color: #1dbaad;
+	width: 35px;
+	height: 35px;
+}
+
+#new-post-form button, #edit-post-form button, #new-category-form button, #new-video-form button {
+	display: block;
+	margin: 20px auto;
+	font-family: 'Hammersmith One', sans-serif;
+	font-size: 17px;
+	color: white;
+	background: #1dbaad;
+	padding: 10px 40px;
+	border-radius: 3px;
+	box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+	text-transform: uppercase;	
+}
+
+#new-post-form button:hover, #edit-post-form button:hover, #new-category-form button:hover, #new-video-form button:hover {
 	box-shadow: none;
 }

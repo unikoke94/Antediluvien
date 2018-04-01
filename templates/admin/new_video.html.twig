@@ -4,8 +4,37 @@
 
 {% block body %}
 
-	{{ form_start(form) }}
-	{{ form_widget(form) }}
-	{{ form_end(form) }}
+	<div class="container-fluid" id="new-video">
+		<div class="container">
+
+			<h2>nouvelle vidéo <i data-feather="youtube"></i></h2>
+			
+			<div id="new-video-form">
+				{{ form_start(form) }}
+
+				<div class="form-group">
+					{{ form_label(form.name) }}
+					{{ form_widget(form.name, {'attr': {
+					'class': 'form-control'
+					}}) }}
+				</div>
+
+				<div class="form-group">
+					{{ form_label(form.url) }}
+					{{ form_widget(form.url, {'attr': {
+					'class': 'form-control'
+					}}) }}
+				</div>
+
+				{{ form_row(form.Publier, {'attr': {'class': 'btn'}}) }}
+
+				{{ form_end(form) }}
+			</div>
+			
+
+		</div>
+	</div>
+
+	
 
 {% endblock %}
