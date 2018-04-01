@@ -1,20 +1,53 @@
 <div class="container-fluid" id="header">
-	<div class="row">
-		<div id="logo-header">
-			<a href="{{ path('home') }}"><img src="{{ asset('build/img/logo-gris.svg') }}" alt="logo" width="80px" height="65px"></a>
+
+	<div id="menu-desktop">
+		<div class="row">
+			<div id="logo-header">
+				<a href="{{ path('home') }}"><img src="{{ asset('build/img/logo-gris.svg') }}" alt="logo" width="80px" height="65px"></a>
+			</div>
+			<div id="title-header">
+				<a href="{{ path('home') }}"><h1>Antédiluvien</h1></a>
+			</div>
 		</div>
-		<div id="title-header">
-			<a href="{{ path('home') }}"><h1>Antédiluvien</h1></a>
+
+		<div class="container" id="menu">
+			<nav class="nav justify-content-center">
+			  <a class="nav-link active" href="{{ path('home') }}" title="Accueil"><i data-feather="home"></i></a>
+			  <a class="nav-link" href="{{ path('about') }}" title="A propos"><i data-feather="globe"></i></a>
+			  <a class="nav-link" href="{{ path('blog_list') }}" title="Blog"><i data-feather="file-text"></i></a>
+			  <a class="nav-link" href="{{ path('videos_list') }}" title="Vidéos"><i data-feather="video"></i></a>
+			  <a class="nav-link" href="{{ path('contact') }}" title="Contact"><i data-feather="mail"></i></a>
+			</nav>
 		</div>
 	</div>
 
-	<div class="container" id="menu">
-		<nav class="nav justify-content-center">
-		  <a class="nav-link active" href="{{ path('home') }}" title="Accueil"><i data-feather="home"></i></a>
-		  <a class="nav-link" href="{{ path('about') }}" title="A propos"><i data-feather="globe"></i></a>
-		  <a class="nav-link" href="{{ path('blog_list') }}" title="Blog"><i data-feather="file-text"></i></a>
-		  <a class="nav-link" href="{{ path('videos_list') }}" title="Vidéos"><i data-feather="video"></i></a>
-		  <a class="nav-link" href="{{ path('contact') }}" title="Contact"><i data-feather="mail"></i></a>
-		</nav>
+	<div id="menu-mobile">
+		<div class="row">
+			<div id="logo-header-mobile">
+				<a href="{{ path('home') }}"><img src="{{ asset('build/img/logo-gris.svg') }}" alt="logo" width="55px" height="40px"></a>
+			</div>
+			<div id="title-header-mobile">
+				<a href="{{ path('home') }}"><h1>Antédiluvien</h1></a>
+			</div>
+		</div>
+
+		<div class="collapse" id="navToggle">
+		    <div class="p-4">
+		      <nav class="nav flex-column justify-content-center">
+				  <a class="nav-link active" href="{{ path('home') }}" title="Accueil"><i data-feather="home"></i> <span class="menu-mobile-item">accueil</span></a>
+				  <a class="nav-link" href="{{ path('about') }}" title="A propos"><i data-feather="globe"></i> <span class="menu-mobile-item">à propos</span></a>
+				  <a class="nav-link" href="{{ path('blog_list') }}" title="Blog"><i data-feather="file-text"></i> <span class="menu-mobile-item">blog</span></a>
+				  <a class="nav-link" href="{{ path('videos_list') }}" title="Vidéos"><i data-feather="video"></i> <span class="menu-mobile-item">vidéos</span></a>
+				  <a class="nav-link" href="{{ path('contact') }}" title="Contact"><i data-feather="mail"></i> <span class="menu-mobile-item">contact</span></a>
+				</nav>
+		    </div>
+		  </div>
+		  <nav class="navbar navbar-dark">
+		    <button id="menu-mobile-button" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navToggle" aria-controls="navToggle" aria-expanded="false" aria-label="Toggle navigation">
+		      <span class="navbar-toggler-icon"></span>
+		    </button>
+		  </nav>
 	</div>
+		
+
 </div>
