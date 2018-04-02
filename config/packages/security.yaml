@@ -10,7 +10,7 @@ security:
             memory:
                 users:
                     admin:
-                        password: TAM260812Alphonse
+                        password: admin
                         roles:    'ROLE_ADMIN'
     firewalls:
         dev:
